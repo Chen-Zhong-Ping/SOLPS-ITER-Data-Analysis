@@ -1,0 +1,38 @@
+#! /bin/csh -f
+
+cd analysis-data-for-plot/2D_data
+mkdir velocity
+cd ../..
+
+## parallel velocity
+
+cd analysis-data-for-plot/2D_data/velocity
+mkdir parallel_velocity
+cd ../../..
+
+set store_dir = analysis-data-for-plot/2D_data/velocity/parallel_velocity
+
+# Deteurium ion parallel velocity
+
+echo "ua 1 zsel 'ua-1_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/ua-1_2D $store_dir
+
+# Carbon ion parallel velocity
+
+echo "ua 3 zsel 'ua-3_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/ua-3_2D $store_dir
+
+echo "ua 4 zsel 'ua-4_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/ua-4_2D $store_dir
+
+echo "ua 5 zsel 'ua-5_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/ua-5_2D $store_dir
+
+echo "ua 6 zsel 'ua-6_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/ua-6_2D $store_dir
+
+echo "ua 7 zsel 'ua-7_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/ua-7_2D $store_dir
+
+echo "ua 8 zsel 'ua-8_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/ua-8_2D $store_dir

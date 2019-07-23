@@ -1,0 +1,53 @@
+#! /bin/csh -f
+
+cd analysis-data-for-plot/2D_data
+mkdir geometry
+cd ../..
+
+set store_dir = analysis-data-for-plot/2D_data/geometry
+
+
+## magnetic geometry
+
+# b poloidal
+
+echo "bx 'bx_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/bx_2D $store_dir
+
+# b total
+
+echo "bb 'bb_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/bb_2D $store_dir
+
+
+## space geometry
+
+# cell volume
+
+echo "vol 'vol_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/vol_2D $store_dir
+
+# connection length
+
+echo "conn 'conn_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/conn_2D $store_dir
+
+# radial coordinate of cell center
+
+echo "cr 'cr_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/cr_2D $store_dir
+
+# vertical coordinate of cell center
+
+echo "cz 'cz_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/cz_2D $store_dir
+
+# radial cell width shear-corrected
+
+echo "hy1 'hy1_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/hy1_2D $store_dir
+
+# poloidal cell length
+
+echo "hx 'hx_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/hx_2D $store_dir

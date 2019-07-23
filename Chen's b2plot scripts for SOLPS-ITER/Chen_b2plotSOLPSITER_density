@@ -1,0 +1,66 @@
+#! /bin/csh -f
+
+cd analysis-data-for-plot/2D_data
+mkdir density
+cd ../..
+
+### 2D data
+
+## electron density
+
+cd analysis-data-for-plot/2D_data/density/
+mkdir n_electron
+cd ../../..
+
+set store_dir = analysis-data-for-plot/2D_data/density/n_electron
+
+echo "ne 'ne_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/ne_2D $store_dir
+
+
+## ion density
+
+cd analysis-data-for-plot/2D_data/density/
+mkdir n_ion
+cd ../../..
+
+set store_dir = analysis-data-for-plot/2D_data/density/n_ion
+
+# Carbon ion
+
+echo "na 3 zsel 'na-3_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/na-3_2D $store_dir
+
+echo "na 4 zsel 'na-4_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/na-4_2D $store_dir
+
+echo "na 5 zsel 'na-5_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/na-5_2D $store_dir
+
+echo "na 6 zsel 'na-6_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/na-6_2D $store_dir
+
+echo "na 7 zsel 'na-7_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/na-7_2D $store_dir
+
+echo "na 8 zsel 'na-8_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/na-8_2D $store_dir
+
+
+## neutral density
+
+cd analysis-data-for-plot/2D_data/density/
+mkdir n_neutral
+cd ../../..
+
+set store_dir = analysis-data-for-plot/2D_data/density/n_neutral
+
+# Deteurium neutral
+
+echo "dab2 0 zsel 'dab2-0_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/dab2-0_2D $store_dir
+
+# Carbon neutral
+
+echo "dab2 1 zsel 'dab2-1_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/dab2-1_2D $store_dir

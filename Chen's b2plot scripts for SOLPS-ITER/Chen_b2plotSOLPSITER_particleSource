@@ -1,0 +1,44 @@
+#! /bin/csh -f
+
+cd analysis-data-for-plot/2D_data
+mkdir particleSource
+cd ../..
+
+## ionization particle source from Eirene
+
+cd analysis-data-for-plot/2D_data/particleSource
+mkdir ionizationSource_fromEirene
+cd ../../..
+
+set store_dir = analysis-data-for-plot/2D_data/particleSource/ionizationSource_fromEirene
+
+# Deteurium ionization particle source
+
+echo "brna 0 zsel 'brna-0_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/brna-0_2D $store_dir
+
+echo "brna 1 zsel 'brna-1_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/brna-1_2D $store_dir
+
+# Carbon ionization particle source
+
+echo "brna 2 zsel 'brna-2_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/brna-2_2D $store_dir
+
+echo "brna 3 zsel 'brna-3_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/brna-3_2D $store_dir
+
+echo "brna 4 zsel 'brna-4_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/brna-4_2D $store_dir
+
+echo "brna 5 zsel 'brna-5_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/brna-5_2D $store_dir
+
+echo "brna 6 zsel 'brna-6_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/brna-6_2D $store_dir
+
+echo "brna 7 zsel 'brna-7_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/brna-7_2D $store_dir
+
+echo "brna 8 zsel 'brna-8_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/brna-8_2D $store_dir

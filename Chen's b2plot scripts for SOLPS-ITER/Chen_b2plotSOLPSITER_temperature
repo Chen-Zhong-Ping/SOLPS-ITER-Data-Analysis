@@ -1,0 +1,30 @@
+#! /bin/csh -f
+
+cd analysis-data-for-plot/2D_data
+mkdir temperature
+cd ../..
+
+### 2D data
+
+## electron temperature
+
+cd analysis-data-for-plot/2D_data/temperature/
+mkdir T_electron
+cd ../../..
+
+set store_dir = analysis-data-for-plot/2D_data/temperature/T_electron
+
+echo "te 'te_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/te_2D $store_dir
+
+
+## ion temperature
+
+cd analysis-data-for-plot/2D_data/temperature/
+mkdir T_ion
+cd ../../..
+
+set store_dir = analysis-data-for-plot/2D_data/temperature/T_ion
+
+echo "ti 'ti_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/ti_2D $store_dir

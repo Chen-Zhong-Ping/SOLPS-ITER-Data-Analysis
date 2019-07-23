@@ -1,0 +1,43 @@
+#! /bin/csh -f
+
+cd analysis-data-for-plot/2D_data
+mkdir particle_flux
+cd ../..
+
+## poloidal flux
+
+cd analysis-data-for-plot/2D_data/particle_flux
+mkdir poloidal_flux
+cd ../../..
+
+set store_dir = analysis-data-for-plot/2D_data/particle_flux/poloidal_flux
+
+# Deteurium ion poloidal_flux
+
+echo "fnax 1 zsel 'fnax-1_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fnax-1_2D $store_dir
+
+# Carbon ion poloidal_flux
+
+echo "fnax 3 zsel 'fnax-3_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fnax-3_2D $store_dir
+
+echo "fnax 4 zsel 'fnax-4_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fnax-4_2D $store_dir
+
+echo "fnax 5 zsel 'fnax-5_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fnax-5_2D $store_dir
+
+echo "fnax 6 zsel 'fnax-6_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fnax-6_2D $store_dir
+
+echo "fnax 7 zsel 'fnax-7_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fnax-7_2D $store_dir
+
+echo "fnax 8 zsel 'fnax-8_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fnax-8_2D $store_dir
+
+# electron poloidal flux
+
+# echo "fnax 'fnex_2D' mprt" | b2plot > & /dev/null
+# mv b2pl.exe.dir/fnex_2D $store_dir

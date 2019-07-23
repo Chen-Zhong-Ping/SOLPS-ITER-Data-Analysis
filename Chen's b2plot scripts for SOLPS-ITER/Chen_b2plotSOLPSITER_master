@@ -1,0 +1,51 @@
+#! /bin/csh -f
+
+# avoid x11 displaying for every plot
+setenv B2PLOT_DEV 'ps'
+
+#### make directory to store all data
+mkdir analysis-data-for-plot
+cd analysis-data-for-plot
+mkdir 1D_data
+mkdir 2D_data
+cd ..
+
+
+#### geometry data
+
+Chen_b2plotSOLPSITER_geometry
+
+
+#### radiation data
+
+Chen_b2plotSOLPSITER_radiation
+
+
+#### density data
+
+Chen_b2plotSOLPSITER_density
+
+
+#### temperature data
+
+Chen_b2plotSOLPSITER_temperature
+
+
+#### velocity data
+
+Chen_b2plotSOLPSITER_velocity
+
+
+#### particle source data
+
+Chen_b2plotSOLPSITER_particleSource
+
+
+#### particle flux data
+
+Chen_b2plotSOLPSITER_particleFlux
+
+
+#### energy flux data
+
+Chen_b2plotSOLPSITER_EnergyFlux

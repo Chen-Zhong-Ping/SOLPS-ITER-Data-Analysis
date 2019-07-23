@@ -1,0 +1,125 @@
+#! /bin/csh -f
+
+cd analysis-data-for-plot/2D_data
+mkdir energy_flux
+cd ../..
+
+### total internal energy flux
+
+cd analysis-data-for-plot/2D_data/energy_flux
+mkdir total_internal_energy_flux
+cd ../../..
+
+set store_dir = analysis-data-for-plot/2D_data/energy_flux/total_internal_energy_flux
+
+## poloidal
+
+echo "fetx 'fetx_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fetx_2D $store_dir
+
+## radial
+
+echo "fety 'fety_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fety_2D $store_dir
+
+
+### heat flux
+
+cd analysis-data-for-plot/2D_data/energy_flux
+mkdir heat_flux
+cd ../../..
+
+set store_dir = analysis-data-for-plot/2D_data/energy_flux/heat_flux
+
+## poloidal
+
+# electron
+
+echo "fhex 'fhex_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fhex_2D $store_dir
+
+# ion
+
+echo "fhix 'fhix_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fhix_2D $store_dir
+
+## radial
+
+# electron
+
+echo "fhey 'fhey_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fhey_2D $store_dir
+
+# ion
+
+echo "fhiy 'fhiy_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fhiy_2D $store_dir
+
+
+### parallel kinetic energy flux
+
+cd analysis-data-for-plot/2D_data/energy_flux
+mkdir parallel_kinetic_energy_flux
+cd ../../..
+
+set store_dir = analysis-data-for-plot/2D_data/energy_flux/parallel_kinetic_energy_flux
+
+## poloidal
+
+# electron is massless, no kinetic energy flux
+
+# ion, sum over all ion species (fluid neutral parts are scaled down by 1e-10)
+
+echo "fhmx 1 8 sumz 'fhmx-sumz_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fhmx-sumz_2D $store_dir
+
+## radial
+
+# electron is massless, no kinetic energy flux
+
+# ion, sum over all ion species (fluid neutral parts are scaled down by 1e-10)
+
+echo "fhmy 1 8 sumz 'fhmy-sumz_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fhmy-sumz_2D $store_dir
+
+
+### ionization potential energy flux
+
+cd analysis-data-for-plot/2D_data/energy_flux
+mkdir ionization_potential_energy_flux
+cd ../../..
+
+set store_dir = analysis-data-for-plot/2D_data/energy_flux/ionization_potential_energy_flux
+
+## poloidal
+
+# only for ions, sum over all ion species (fluid neutral parts are zero)
+
+echo "fhpx 1 8 sumz 'fhpx-sumz_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fhpx-sumz_2D $store_dir
+
+## radial
+
+# only for ions, sum over all ion species (fluid neutral parts are zero)
+
+echo "fhpy 1 8 sumz 'fhpy-sumz_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fhpy-sumz_2D $store_dir
+
+
+### "total energy" flux
+
+cd analysis-data-for-plot/2D_data/energy_flux
+mkdir total_energy_flux
+cd ../../..
+
+set store_dir = analysis-data-for-plot/2D_data/energy_flux/total_energy_flux
+
+## poloidal
+
+echo "fhtx 'fhtx_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fhtx_2D $store_dir
+
+## radial
+
+echo "fhty 'fhty_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/fhty_2D $store_dir

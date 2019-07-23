@@ -1,0 +1,56 @@
+#! /bin/csh -f
+
+cd analysis-data-for-plot/2D_data
+mkdir radiation
+cd ../..
+
+## line radiation
+
+cd analysis-data-for-plot/2D_data/radiation
+mkdir ion_line_radiation
+cd ../../..
+
+set store_dir = analysis-data-for-plot/2D_data/radiation/ion_line_radiation
+
+# Deteurium ion line radiation is 0, no need to calculate
+
+# Carbon ion line
+
+echo "b2ra 3 zsel 'b2ra-3_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/b2ra-3_2D $store_dir
+
+echo "b2ra 4 zsel 'b2ra-4_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/b2ra-4_2D $store_dir
+
+echo "b2ra 5 zsel 'b2ra-5_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/b2ra-5_2D $store_dir
+
+echo "b2ra 6 zsel 'b2ra-6_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/b2ra-6_2D $store_dir
+
+echo "b2ra 7 zsel 'b2ra-7_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/b2ra-7_2D $store_dir
+
+# C6+ line radiation is 0, no need to calculate actually
+
+echo "b2ra 8 zsel 'b2ra-8_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/b2ra-8_2D $store_dir
+
+
+## neutral radiation
+
+cd analysis-data-for-plot/2D_data/radiation
+mkdir neutral_radiation
+cd ../../..
+
+set store_dir = analysis-data-for-plot/2D_data/radiation/neutral_radiation
+
+# Deteurium neutral
+
+echo "neutrad 0 zsel 'neutrad-0_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/neutrad-0_2D $store_dir
+
+# Carbon neutral
+
+echo "neutrad 1 zsel 'neutrad-1_2D' mprt" | b2plot > & /dev/null
+mv b2pl.exe.dir/neutrad-1_2D $store_dir
